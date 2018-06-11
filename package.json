@@ -1,0 +1,19 @@
+{
+  "name": "chomchob-backend-testing",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martzing/chomchob-backend-testing.git"
+  },
+  "bugs": {
+    "url": "https://github.com/martzing/chomchob-backend-testing/issues"
+  },
+  "homepage": "https://github.com/martzing/chomchob-backend-testing#readme",
+  "description": ""
+}
