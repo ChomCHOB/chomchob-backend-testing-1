@@ -8,9 +8,9 @@ class Person {
   friendsOfFriends() {
     let friendsOfFriendsList = []
     for(let myFriend of this.friends){
-      for(let friendOfFriend of myFriend.friends){
-        if((!this.friends.includes(friendOfFriend)) && (!friendsOfFriendsList.includes(friendOfFriend)) && (friendOfFriend !== this)){
-          friendsOfFriendsList.push(friendOfFriend)
+      for(let friendOfMyFriend of myFriend.friends){
+        if((!this.friends.includes(friendOfMyFriend)) && (!friendsOfFriendsList.includes(friendOfMyFriend)) && (friendOfMyFriend !== this)){
+          friendsOfFriendsList.push(friendOfMyFriend)
         }
       }
     }

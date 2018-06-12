@@ -29,12 +29,27 @@ assert(japObj.friends.includes(noteObj), `Check Note is Jap's friend after make 
 assert(noteObj.friends.includes(japObj), `Check Jap is Note's friend after make relation`)
 
 // expect false when make relation again
-assert(!util.makeRelation(noteObj, japObj))
+assert(!util.makeRelation(noteObj, japObj), 'Test make relation with exist friend ( expect false )')
+assert(!util.makeRelation(noteObj, noteObj), 'Test make relation with yourself ( expect false )')
 
 
 /* ----- test get friends of friends ----- */
 
-// init data
+// init data1
+const A = new Persone('A')
+const B = new Persone('B')
+const C = new Persone('C')
+const D = new Persone('D')
+
+// make relation2
+util.makeRelation(A, B)
+util.makeRelation(A, D)
+util.makeRelation(B, D)
+util.makeRelation(B, C)
+
+assert.deepEqual(A.friendsOfFriends(), [C],'Check friends of friends of "A" (expect "C")' )
+
+// init data2
 const fieldObj = new Persone('Field')
 const fahObj = new Persone('Fah')
 const mikeObj = new Persone('Mike')
@@ -56,7 +71,7 @@ const zeeObj = new Persone('Zee')
 const pokObj = new Persone('Pok')
 const kaewObj = new Persone('Kaew')
 
-// make relation
+// make relation2
 util.makeRelation(martObj, fieldObj)
 util.makeRelation(martObj, fahObj)
 util.makeRelation(martObj, mikeObj)
